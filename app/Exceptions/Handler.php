@@ -59,23 +59,32 @@ class Handler extends ExceptionHandler
 
         $guard = array_get($exception->guards(),0);
 
-        //dd($guard);
-
         switch ($guard) {
             case 'admin':
-                    $redirect = route('admin.login');
+                //echo "<script> alert('I am Admin') </script>";
+                $redirect = route('admin.login');
                 break;
-            
             default:
-                    $redirect = route('login');
+                $redirect = route('login');
                 break;
         }
+        
 
         return $request->expectsJson()
                     ? response()->json(['message' => $exception->getMessage()], 401)
-                    : redirect()->guest($redirect);
-                    //: redirect()->guest($exception->redirectTo() ?? $redirect);
+                    //: redirect()->guest($redirect);
+                    : redirect()->guest($exception->redirectTo() ?? $redirect);
     }
+
+        
+
+
+
+
+
+
+
+
 
 
 }

@@ -13,6 +13,21 @@
 
 //User Route
 
+Route::get("ad", function(){
+   return "Hey, Admin";
+})->name('ad');
+
+Route::get("us", function(){
+   return "Hey, User";
+})->name('us');
+
+
+
+
+
+
+
+
 Route::group(['namespace' => 'User'], function(){
 
    //user post route
@@ -29,7 +44,7 @@ Route::group(['namespace' => 'User'], function(){
 
 //Admin Route
 
-Route::group(['namespace' => 'Admin','middleware'=>'auth:admin'], function(){
+Route::group(['namespace' => 'Admin'], function(){
    
    //admin home route
    Route::get('admin/home','Homecontroller@index')->name('admin.home');

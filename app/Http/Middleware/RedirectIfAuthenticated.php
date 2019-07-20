@@ -22,13 +22,16 @@ class RedirectIfAuthenticated
                 if (Auth::guard($guard)->check())
                  {
                 return redirect('admin/home');
+                    echo "<script> alert('I am Admin') </script>";
                  }
                 break;
             
             default:
                 if (Auth::guard($guard)->check())
                  {
-                return redirect('/home');
+                //return redirect('/home');
+                    echo "<script> alert('I am user') </script>";
+
                  }
                 break;
         }

@@ -13,4 +13,10 @@ class HomeController extends Controller
     {
     	return view('admin.home');
     }
+
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
 }

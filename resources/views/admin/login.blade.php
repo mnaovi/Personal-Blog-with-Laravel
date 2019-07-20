@@ -52,8 +52,8 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
-            </label>
+              <input type="checkbox"> Reme
+            </label><h2>Hey Admin</h2>
           </div>
         </div>
         <!-- /.col -->
